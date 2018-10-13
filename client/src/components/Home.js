@@ -4,6 +4,7 @@ import {
   Card,
   Image,
   Header,
+  Container,
 } from 'semantic-ui-react'
 
 class Home extends React.Component {
@@ -28,7 +29,9 @@ class Home extends React.Component {
             </Card.Meta>
           </Card.Content>
           <Card.Content extra>
-            Avg Rating: {b.avg_rating} - {b.num_ratings} ratings - Published in {b.published}
+           <Card.Meta>Average Rating: {b.avg_rating}</Card.Meta> 
+           <Card.Meta>{b.num_ratings} Ratings</Card.Meta>
+           <Card.Meta>Published in {b.published}</Card.Meta>
           </Card.Content>
         </Card>
       )
@@ -38,12 +41,17 @@ class Home extends React.Component {
   render() {
     return(
       <>
-        <Header textAlign='center'>
-          Top 50 Fiction Books
-        </Header>
-        <Card.Group flex justifyContent='center' itemsPerRow={6}>
-          {this.listBooks()}
-        </Card.Group>
+        <Container>
+          <Header textAlign='center'>
+            Top 50 Fiction Books
+            <Header.Subheader>
+              Brought to you by 'GoodReads'
+            </Header.Subheader>
+          </Header>
+          <Card.Group flex justifyContent='center' itemsPerRow={5}>
+            {this.listBooks()}
+          </Card.Group>
+        </Container>
       </>
     )
   }
