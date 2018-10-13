@@ -7,7 +7,7 @@ class CreateBooks < ActiveRecord::Migration[5.2]
       t.string :image
       t.float :avg_rating
       t.bigint :num_ratings
-      t.number :published
+      t.integer :published
 
       t.timestamps
     end
